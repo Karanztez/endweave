@@ -21,6 +21,7 @@ from endweave.protocol.version import (
     v26_20,
     v26_30,
     v26_50,
+    v26_60,
 )
 
 UNREGISTERED_VERSION = max(get_protocols()).version + 1
@@ -221,3 +222,23 @@ def test_register_inserts_in_protocol_order(isolated_registry: None) -> None:
     assert get_by_name("99.0") is added
     assert get_protocols() == sorted(get_protocols())
     assert get_protocols()[-1] is added
+
+
+def test_v26_60_covers_26_60_through_26_63() -> None:
+    assert v26_60.included_versions == frozenset({"26.60", "26.61", "26.62", "26.63"})
+    assert str(v26_60) == "26.60-26.63 (2225)"
+    expected = (
+        "26.60",
+        "1.26.60",
+        "26.61",
+        "1.26.61",
+        "1.26.61.1",
+        "26.62",
+        "1.26.62",
+        "1.26.62.1",
+        "26.63",
+        "1.26.63",
+        "1.26.63.1",
+    )
+    for name in expected:
+        assert get_by_name(name) is v26_60
