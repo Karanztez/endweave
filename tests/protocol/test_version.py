@@ -224,9 +224,9 @@ def test_register_inserts_in_protocol_order(isolated_registry: None) -> None:
     assert get_protocols()[-1] is added
 
 
-def test_v26_60_covers_26_60_through_26_63() -> None:
-    assert v26_60.included_versions == frozenset({"26.60", "26.61", "26.62", "26.63"})
-    assert str(v26_60) == "26.60-26.63 (2225)"
+def test_v26_60_covers_26_60_through_26_65() -> None:
+    assert v26_60.included_versions == frozenset({"26.60", "26.61", "26.62", "26.63", "26.64", "26.65"})
+    assert str(v26_60) == "26.60-26.65 (2225)"
     expected = (
         "26.60",
         "1.26.60",
@@ -239,6 +239,11 @@ def test_v26_60_covers_26_60_through_26_63() -> None:
         "26.63",
         "1.26.63",
         "1.26.63.1",
+        "26.64",
+        "1.26.64",
+        "26.65",
+        "1.26.65",
+        "1.26.65.1",
     )
     for name in expected:
         assert get_by_name(name) is v26_60

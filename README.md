@@ -16,7 +16,7 @@ Endweave translates between any two of these:
 | 26.40-26.44       | 2168     |
 | 26.45             | 2169     |
 | 26.50-26.52       | 2193     |
-| 26.60-26.63       | 2225     |
+| 26.60-26.65       | 2225     |
 
 26.45 puts the same bytes on the wire as 26.40-26.44 under a different number, so Endweave carries a client on
 either onto a server on the other by writing the server's number into the handshake, and translates nothing.

@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ## [Unreleased]
 
 ### Added
-- Minecraft 26.61, 26.62 and 26.63 support.
+- Minecraft 26.61, 26.62, 26.63, 26.64 and 26.65 support.
 
 ## [0.6.3] - 2026-10-25
 
